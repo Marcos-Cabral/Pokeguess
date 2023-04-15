@@ -49,6 +49,7 @@ samp {
   position: absolute;
   bottom: 20px;
 }
+
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
   .container-flex {
@@ -69,57 +70,18 @@ samp {
     align-items: center;
     margin: 0 auto;
   }
-}
-
-/* Small Devices, Tablets 
-@media only screen and (min-width : 768px) {
-  .container-flex {
-    font-size: 14px;
-  }
-  .btn-flex button img{
-    width: 20px;
-    height: 20px;
-  }
-  .buttons {
-    gap:12px;
-  }
-  body{
-    background-color: pink  !important;
+  .btn-keyboard{
+    width: 28px !important;
+    font-size: 15px;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase;
+    font-weight: lighter !important;
   }
 }
 
-@media only screen and (min-width : 992px) {
-  .container-flex {
-    font-size: 14px;
-  }
-  .btn-flex button img{
-    width: 20px;
-    height: 20px;
-  }
-  .buttons {
-    gap:12px;
-  }
-  body{
-    background-color: green  !important;
-  }
-}
-
-@media only screen and (min-width : 1200px) {
-  .container-flex {
-    font-size: 14px;
-  }
-  .btn-flex button img{
-    width: 20px;
-    height: 20px;
-  }
-  .buttons {
-    gap:12px;
-  }
-  body{
-    background-color: violet  !important;
-  }
-}
-*/
 @media only screen and (max-width: 580px) {
   .container-flex {
     font-size: 14px;
@@ -187,9 +149,12 @@ samp {
   .footer p{
     font-size: 10px;
   }
+  background-color: red !important;
 }
-@media only screen and (max-width: 330px) {
-  body{
-    background-color: red;
+
+@media only screen and (min-width : 800px) {
+  .btn-keyboard{
+    width: 3rem !important;
+    height: 3rem !important;
   }
 }

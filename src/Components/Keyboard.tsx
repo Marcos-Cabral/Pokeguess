@@ -16,7 +16,7 @@ export const Keyboard = ({ guesses, handleGuess, keyboardRow, flag, resetGame }:
           <button
             key={index}
             className={
-              guesses.includes(letter) ? 'nes-btn is-disabled' : 'nes-btn'
+              guesses.includes(letter) ? 'nes-btn is-disabled btn-keyboard' : 'nes-btn btn-keyboard'
             }
             onClick={() => handleGuess(letter)}
           >
