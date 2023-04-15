@@ -131,9 +131,9 @@ function App() {
             <p>{language.aciertos}: {correctGuesses}</p>
             <PokemonSprite esDark={esDark} isHardMode={isHardMode} won={won} word={word} />
             <HideWord guesses={guesses} word={word} />
-            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='qwertyuiop' flag={false} resetGame={null} />
-            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='asdfghjklñ' flag={false} resetGame={null} />
-            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='zxcvbnm' flag={true} resetGame={resetGame} />
+            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='qwertyuiop'/>
+            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='asdfghjklñ'/>
+            <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='zxcvbnm'/>
             <div className="container-buttons">
               <p className="buttons">
                 <ReLoadButton resetGame={resetGame} />
@@ -153,12 +153,12 @@ function App() {
         />
         <EndGameModal language={language} resetGame={resetGame} word={word} />
         <div className='footer'>
-          <p style={{ margin: 0 }}>By Marcos Cabral</p> 
-          <div style={{ display: 'flex', gap: 15 }}> 
+          <p style={{ margin: 0 }}>By Marcos Cabral</p>
+          <div style={{ display: 'flex', gap: 15 }}>
             <a href="https://github.com/Marcos-Cabral" target="_blank">
               <i className="nes-icon github is-medium"></i>
             </a>
-            <a href="https://www.linkedin.com/in/marcos-cabral-085961180/"  target="_blank">
+            <a href="https://www.linkedin.com/in/marcos-cabral-085961180/" target="_blank">
               <i className="nes-icon linkedin is-medium"></i>
             </a>
           </div>
