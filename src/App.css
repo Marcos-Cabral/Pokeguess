@@ -61,7 +61,7 @@ samp {
 
 @media only screen and (min-width : 300px) {
   .buttons {
-    gap: 2px;
+    gap: 4px;
   }
 
   .btn-keyboard {
@@ -136,7 +136,7 @@ samp {
   }
 
   .buttons {
-    gap: 4px;
+    gap: 2px;
     min-width: 100%;
     margin: 10px;
   }
@@ -213,5 +213,8 @@ samp {
   .btn-keyboard {
     width: 3rem !important;
     height: 3rem !important;
+  }
+  .buttons {
+    gap: 8px;
   }
 }
