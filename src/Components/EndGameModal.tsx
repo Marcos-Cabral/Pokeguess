@@ -1,16 +1,17 @@
-import { word } from '../App'
+import { IPokemon } from "../interfaces/IPokemon"
+
 interface Props {
   resetGame(): void,
-  word: word,
+  pokemon: IPokemon,
   language: any
 }
-export const EndGameModal = ({ language, resetGame, word }: Props) => {
+export const EndGameModal = ({ language, resetGame, pokemon }: Props) => {
   return (
     <section>
       <dialog className="nes-dialog" id="lost-dialog">
         <form method="dialog">
           <p className="title">{language.hasPerdido}</p>
-          <span>{language.respuesta} {word.name}</span>
+          <span>{language.respuesta} {pokemon.name}</span>
           <menu
             className="dialog-menu"
             style={{

@@ -1,17 +1,17 @@
-import { word } from '../App'
+import { IPokemon } from '../interfaces/IPokemon'
 interface Props {
   esDark: boolean,
   isHardMode: boolean,
   won: boolean,
-  word: word,
+  pokemon: IPokemon,
 }
-export const PokemonSprite = ({ esDark, isHardMode, word, won }: Props) => {
+export const PokemonSprite = ({ esDark, isHardMode, pokemon, won }: Props) => {
   return (
     <img
       src={
         !isHardMode
-          ? word.img.other['official-artwork'].front_default
-          : word.img['back_default']
+          ? pokemon.img.other['official-artwork'].front_default
+          : pokemon.img['back_default']
       }
       className={won ? '' : esDark? 'img-dark' : 'img-light'}
       style={{

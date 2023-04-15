@@ -1,12 +1,12 @@
-import { word } from '../App'
+import { IPokemon } from '../interfaces/IPokemon'
 interface Props {
   guesses: Array<string>,
-  word: word,
+  pokemon: IPokemon,
 }
-export const HideWord = ({ guesses, word }: Props) => {
+export const HideWord = ({ guesses, pokemon }: Props) => {
   return (
     <p style={{ fontSize: 20, margin: 15 }} className='input-name'>
-      {word.name
+      {pokemon.name
         .split('')
         .map((letter) =>
           guesses.includes(letter) ? ' ' + letter + ' ' : ' _ '

@@ -13,15 +13,12 @@ import { EndGameModal } from './Components/EndGameModal';
 import { getPokemonRandom } from './services/getRandomPokemon';
 import { LIFES_MAX, LIFES_MIN } from './Constants';
 import { espanol } from './languages/languages';
-
-export interface word {
-  img: any;
-  name: string,
-}
+import { IPokemon } from './interfaces/IPokemon';
+import { Footer } from './Components/Footer';
 
 function App() {
   //need refactor
-  const [word, setWord] = useState<word>({} as word);
+  const [pokemon, setPokemon] = useState<IPokemon>({} as IPokemon);
   const [isLoading, setIsLoading] = useState(true);
   const [guesses, setGuesses] = useState<Array<string>>([]);
   const [correctGuesses, setCorrectGuesses] = useState(0);
@@ -34,7 +31,7 @@ function App() {
 
   function handleGuess(guess: string) {
     if (guesses.includes(guess)) return;
-    if (word.name.includes(guess)) {
+    if (pokemon.name.includes(guess)) {
       setGuesses([...guesses, guess]);
     } else {
       if (lifes - 1 == 0) {
@@ -46,8 +43,8 @@ function App() {
   }
 
   useEffect(() => {
-    if (!word.name) return;
-    if (word.name.split('').every((letter) => guesses.includes(letter))) {
+    if (!pokemon.name) return;
+    if (pokemon.name.split('').every((letter) => guesses.includes(letter))) {
       setWon(true);
       setCorrectGuesses(correctGuesses + 1);
       setTimeout(() => {
@@ -63,7 +60,7 @@ function App() {
       img: res.sprites,
       name: res.name.replace(/([^\w ]|_)/g, '').replace(" ", ''),
     };
-    setWord(obj);
+    setPokemon(obj);
     setIsLoading(false);
   }
   useEffect(() => {
@@ -72,13 +69,13 @@ function App() {
   function reset() {
     setIsLoading(true);
     setLifes(isHardMode ? LIFES_MIN : LIFES_MAX);
-    setWord({} as word);
+    setPokemon({} as IPokemon);
     setGuesses([]);
     llamarApi();
   }
   function reload() {
     setIsLoading(true);
-    setWord({} as word);
+    setPokemon({} as IPokemon);
     setGuesses([]);
     llamarApi();
   }
@@ -89,7 +86,7 @@ function App() {
 
   function hasWon() {
     setIsLoading(true);
-    setWord({} as word);
+    setPokemon({} as IPokemon);
     setGuesses([]);
     llamarApi();
   }
@@ -129,8 +126,8 @@ function App() {
         ) : (
           <>
             <p>{language.aciertos}: {correctGuesses}</p>
-            <PokemonSprite esDark={esDark} isHardMode={isHardMode} won={won} word={word} />
-            <HideWord guesses={guesses} word={word} />
+            <PokemonSprite esDark={esDark} isHardMode={isHardMode} won={won} pokemon={pokemon} />
+            <HideWord guesses={guesses} pokemon={pokemon} />
             <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='qwertyuiop'/>
             <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='asdfghjklñ'/>
             <Keyboard guesses={guesses} handleGuess={handleGuess} keyboardRow='zxcvbnm'/>
@@ -151,18 +148,8 @@ function App() {
           setEsDark={setEsDark}
           setLanguage={setLanguage}
         />
-        <EndGameModal language={language} resetGame={resetGame} word={word} />
-        <div className='footer'>
-          <p style={{ margin: 0 }}>By Marcos Cabral</p>
-          <div style={{ display: 'flex', gap: 15 }}>
-            <a href="https://github.com/Marcos-Cabral" target="_blank">
-              <i className="nes-icon github is-medium"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/marcos-cabral-085961180/" target="_blank">
-              <i className="nes-icon linkedin is-medium"></i>
-            </a>
-          </div>
-        </div>
+        <EndGameModal language={language} resetGame={resetGame} pokemon={pokemon} />
+        <Footer/>
       </div>
     </>
   );
