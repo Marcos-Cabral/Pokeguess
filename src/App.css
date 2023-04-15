@@ -1,0 +1,195 @@
+html,
+body,
+pre,
+code,
+kbd,
+samp {
+  font-family: 'Press Start 2P';
+}
+.buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 400px;
+  flex-wrap: wrap;
+}
+.button {
+  width: 150px;
+  height: 50px;
+}
+.mx {
+  padding: 30px;
+  margin: 30px;
+}
+.white-container {
+  margin: 10px 10px;
+}
+.img-dark{
+  filter: brightness(0) invert(1);
+}
+.img-light{
+  filter: brightness(0);
+}
+.heart {
+  width: 10px !important;
+  height: 10px !important;
+}
+.min-h{
+  min-height: 100vh;
+}
+.footer{
+  display: flex;
+  width: 85%;
+  justify-content: space-around;
+  gap: 5px;
+  margin: 20px 10px;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+  .container-flex {
+    font-size: 14px;
+  }
+  .btn-flex button img{
+    width: 20px;
+    height: 20px;
+  }
+  .buttons {
+    gap:3px;
+    min-width: 530px;
+  }
+  .container-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+/* Small Devices, Tablets 
+@media only screen and (min-width : 768px) {
+  .container-flex {
+    font-size: 14px;
+  }
+  .btn-flex button img{
+    width: 20px;
+    height: 20px;
+  }
+  .buttons {
+    gap:12px;
+  }
+  body{
+    background-color: pink  !important;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .container-flex {
+    font-size: 14px;
+  }
+  .btn-flex button img{
+    width: 20px;
+    height: 20px;
+  }
+  .buttons {
+    gap:12px;
+  }
+  body{
+    background-color: green  !important;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .container-flex {
+    font-size: 14px;
+  }
+  .btn-flex button img{
+    width: 20px;
+    height: 20px;
+  }
+  .buttons {
+    gap:12px;
+  }
+  body{
+    background-color: violet  !important;
+  }
+}
+*/
+@media only screen and (max-width: 580px) {
+  .container-flex {
+    font-size: 14px;
+    margin: 0px 0px 20px 2px !important;
+  }
+  .container-flex p, .container-flex span{
+    font-size: 13px;
+  }
+  .btn-flex button img{
+    width: 20px;
+    height: 20px;
+  }
+  .container-buttons{
+    width: 100%;
+  }
+  .buttons {
+    gap:8px;
+    min-width: 95%;
+    margin: 10px;
+  }
+  .input-name{
+    padding: 0px;
+    margin: -4px 4px !important;
+  }
+  .is-centered.nes-container.with-title.white-container.min-h{
+    padding: 0;
+  }
+  p.title{
+    position: relative;
+    top: 10px;
+  }
+  .btn-setting{
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .btn-setting img{
+    width: 35px;
+    height: 35px;
+  }
+  .lifes-container{
+    top: 22px;
+    left: 15px;
+  }
+  .nes-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .nes-icon.github.is-medium, .nes-icon.linkedin.is-medium{
+    transform: scale(2);
+    height: 0px;
+    width: 0px;
+  }
+  .btn-flex{
+    justify-content: flex-end !important;
+    margin: 0px 0px 0px -9px;
+  }
+  .modal-btn{
+    width: 220px !important;
+    height: 60px !important;
+  }
+  .footer p{
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  body{
+    background-color: red;
+  }
+}
